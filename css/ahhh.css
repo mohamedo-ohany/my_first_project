@@ -1,0 +1,490 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: rgb(16 202 183);
+    --main-padding: 60px;
+    --secondary-color: #2c4755;
+    --section-background: #f6f6f6;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* تعريفه المتصفح */
+@media (min-width :768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* الشاشخ صغير */
+@media (min-width :992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* الشاشه متوسط */
+
+@media (min-width :1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* الشاشه كبير */
+body {
+
+    font-family: "work sans", sans-serif
+}
+
+/* الخط */
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* بنصص الخط */
+.header {
+
+    /* padding: 20px; */
+    background-color: #f6f6f67d;
+}
+
+/* لون و حجم الهيد */
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* بينصص الكلام و يخليه علي نفس السطر */
+.webname {
+    color: var(--main-color);
+}
+
+/* لون الاسم */
+.header .link {
+    position: relative;
+}
+
+/* موقع بتاع الخيارات */
+.header .link ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6f6;
+    position: absolute;
+    min-width: 200px;
+    top: 25px;
+    right: 24px;
+    display: none;
+    z-index: 1;
+}
+
+/* كل ما يخص الخيارات */
+.header .link ul::before {
+    content: "";
+    border-style: solid;
+    border-width: 10px;
+    position: absolute;
+    border-color: transparent transparent var(--section-background) transparent;
+    top: -20px;
+    right: 0px;
+}
+
+/* السهم بتاع الخيارات */
+.header .logo {
+    width: 65px;
+}
+
+/* حجم اللوجو */
+.header .link:hover ul {
+    display: block;
+}
+
+
+/* الهفر عشان تظهر الخيارات */
+.header .container .link .icon {
+    display: block;
+    position: sticky;
+    width: 65px;
+    text-align: center;
+}
+
+/* الخيارات تظهر شكلها كدا */
+.header .link ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* نفس الفوق */
+.header .link ul li a:hover {
+    padding-left: 25px;
+}
+
+/* الخيار العليه الموس يتحرك */
+.header .link ul li:not(:last-child) a {
+    border-bottom: 1px solid #ddd;
+}
+
+.special-heading {
+    text-align: center;
+}
+
+.special-heading h2 {
+    margin: 0;
+    font-size: 120px;
+    font-weight: 800;
+    color: #ddd;
+}
+
+.special-heading p {
+    margin: -35px 0 0;
+    font-size: 30px;
+    font-weight: 450;
+    color: #79797977;
+}
+
+@media (min-width :768px) {
+    .special-heading h2 {
+        font-size: 50px;
+    }
+
+    .special-heading p {
+        margin: -15px 0 0;
+    }
+}
+
+
+/* الخط البعد العناصر */
+.landing {
+    background-image: url(../images/landing.jpg);
+    background-size: cover;
+    height: calc(100vh - 65px);
+    margin: 0;
+    position: relative;
+}
+
+.intro {
+    width: 320px;
+    max-width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.intro h1 {
+    color: var(--main-color);
+    margin: 0;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.intro p {
+    font-size: 30px;
+    color: #333;
+}
+
+.features {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-color: var(--section-background);
+}
+
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 20px;
+}
+
+
+.features .feat {
+    padding: 20px;
+    text-align: center
+}
+
+.features .feat i {
+    color: var(--main-color);
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.features .feat h3 {
+    font-weight: 800;
+    margin: 25px;
+}
+
+.features .feat p {
+    font-weight: 450;
+    font-size: medium;
+}
+
+.services {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.services .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 0;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.services .services-content .srv {
+    padding: 20px;
+}
+
+@media (max-width :768px) {
+    .services .services-content {
+        align-items: center;
+
+    }
+}
+
+.services .services-content .srv i {
+    color: var(--main-color);
+    font-size: 35px;
+    font-weight: 550;
+}
+
+.services .services-content .srv h3 {
+    color: #333;
+    font-weight: 800;
+
+}
+
+.services .services-content .srv p {
+    font-weight: 450;
+    color: 777;
+}
+
+.services .services-content .simage {
+    position: relative;
+}
+
+.services .services-content .simage::before {
+    content: "";
+    background-color: var(--secondary-color);
+    width: 100px;
+    height: calc(100% + 100px);
+    top: -50px;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+}
+
+.services .services-content .simage img {
+    width: 260px;
+}
+
+@media (max-width: 1199px) {
+    .lcol {
+        display: none;
+    }
+
+}
+
+/* profel start */
+
+.protfolio {
+    background-color: var(--section-background);
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.protfolio .protfolio-con {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 35px;
+    margin-top: 85px;
+}
+
+.protfolio .card {
+    text-align: center;
+    background-color: white;
+}
+
+.protfolio .card img {
+    max-width: 100%;
+}
+
+.protfolio .card .info {
+    padding: 20px;
+}
+
+@media (max-width: 767px) {
+    .protfolio .card {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+}
+
+.abuot {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.abuot .abuot-con {
+    margin-top: 60px;
+    display: grid;
+    gap: 60px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.abuot .abuot-con .aimage {
+    position: relative;
+
+}
+
+.abuot .abuot-con .aimage img {
+    width: 250px;
+    height: 375px;
+}
+
+.abuot .abuot-con .aimage::before {
+    content: "";
+    position: absolute;
+    height: calc(100% + 80px);
+    background-color: #ebeced;
+    z-index: -1;
+    width: 100px;
+    top: -40px;
+    left: -50px;
+}
+
+.abuot .aimage::after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--main-color);
+    border-width: 100px;
+    top: calc(100% - 204px);
+    z-index: -1;
+
+}
+
+@media (max-width: 991px) {
+
+    .abuot .abuot-con .aimage::before,
+    .abuot .aimage::after {
+        display: none
+    }
+
+    .aimage,
+    .text {
+        text-align: center;
+    }
+
+    .abuot .abuot-con,
+    .features .container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+    }
+}
+
+.abuot .text {
+    margin-top: auto;
+    margin-bottom: auto;
+    line-height: 25px;
+    text-align: center;
+}
+
+.abuot .text p:first-of-type {
+    font-weight: bold;
+}
+
+.abuot .text hr {
+    border-color: var(--main-color);
+    display: inline-block;
+    width: 75%;
+
+}
+
+.abuot .text p:last-of-type {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.contact {
+    background-color: var(--section-background);
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.contact .mail {
+    font-size: 35px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 7px;
+    margin-top: 60px;
+    margin-bottom: 15px;
+}
+
+.contact .mail p {
+    color: var(--secondary-color);
+}
+
+.contact .mail a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-size: 50px;
+}
+
+.contact .social {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.contact .social p {
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--secondary-color);
+}
+
+.contact .social i {
+    text-decoration: none;
+    color: var(--main-color);
+    font-size: 30px;
+    padding: 0 20px;
+    margin-bottom: 25px;
+}
+
+.footer {
+    background-color: var(--secondary-color);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-weight: 300;
+}
+
+.footer span {
+    color: var(--main-color);
+    font-weight: 800;
+    font-size: 15px;
+}
+
+@media (max-width: 767px) {
+
+    .contact .mail,
+    .contact .social p {
+        font-size: 25px;
+    }
+
+}
